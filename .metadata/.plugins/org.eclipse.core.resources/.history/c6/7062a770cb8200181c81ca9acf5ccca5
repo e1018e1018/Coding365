@@ -1,0 +1,108 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
+
+public class _13 {
+
+	static ArrayList<String> A = new ArrayList<String>();
+	static ArrayList<String> B = new ArrayList<String>();
+	
+	static List<String> list1 =new ArrayList<String>(A);
+	static List<String> list2 =new ArrayList<String>(B);
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		while(input.hasNext()){
+		String[] temp = input.nextLine().toString().split(" ");
+
+		if(temp[0].equals("0")) {
+			System.exit(1);
+		}
+		
+		if(temp[0].equals("1")) {
+			A.clear();;
+			print();
+		}
+		
+		if(temp[0].equals("2")) {
+			B.clear();
+			print();
+		}
+		
+		if(temp[0].equals("3")) {
+			if(A.contains(temp[1]) == false) {
+				A.add(temp[1]);
+			}
+			print();
+		}
+		
+		if(temp[0].equals("4")) {
+			if(B.contains(temp[1]) == false) {
+				B.add(temp[1]);
+			}
+			print();
+		}
+		
+		if(temp[0].equals("5")) {
+			if(A.contains(temp[1])) {
+				A.remove(temp[1]);
+			}
+			print();
+		}
+		
+		if(temp[0].equals("6")) {
+			if(B.contains(temp[1])) {
+				B.remove(temp[1]);
+			}
+			print();
+		}
+		
+		if(temp[0].equals("7")) {
+			List<String> list1 =new ArrayList<String>(A);
+			List<String> list2 =new ArrayList<String>(B);
+			list1.addAll(list2);
+			Set<String> set = new HashSet<String>(list2);
+			List<String> newList = new ArrayList<String>(set);
+
+			System.out.print("[");
+			for(int i =0; i < newList.size(); i++) {
+				System.out.print(newList.get(i) + ",");
+			}
+			System.out.println("]");
+		}
+		
+		if(temp[0].equals("8")) {
+			List<String> list1 =new ArrayList<String>(A);
+			List<String> list2 =new ArrayList<String>(B);
+			list1.retainAll(list2);
+			System.out.print("[");
+			for(int i =0; i < list1.size(); i++) {
+				System.out.print(list1.get(i) + ",");
+			}
+			System.out.println("]");
+		}
+		
+		if(temp[0].equals("9")) {
+			if(list1.retainAll(list2) == false) {
+				System.out.println("0");
+			}else {
+				System.out.println("1");
+			}			
+		}
+	}
+}		
+	public static void print() {
+		System.out.print("A:[");
+		for(int i = 0; i < A.size(); i++) {
+			System.out.print(A.get(i) + ",");
+		}
+		System.out.print("]B:[");
+		for(int j = 0; j < B.size(); j++) {
+			System.out.print(B.get(j) + ",");
+		}
+		System.out.println("]");
+	}
+}

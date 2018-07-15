@@ -1,0 +1,66 @@
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class _15 {
+
+	static Scanner input = new Scanner(System.in);
+	static String operator = input.nextLine();
+	static String A = input.nextLine();
+	static String B = input.nextLine();
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+		String[] temp_1 = A.split(" ");
+		ArrayList<String> removeOperator = new ArrayList<String>();
+		HashMap<String,Integer> map = new HashMap <String,Integer>();
+
+		for(int i = 0; i < temp_1.length; i++) {
+			removeOperator.add(temp_1[i]);
+		}
+		for(int j = 0; j < removeOperator.size(); j++) {
+			if(removeOperator.get(j).equals("-")) {
+				removeOperator.set(j+1, "-" + removeOperator.get(j+1));
+				removeOperator.remove(j);
+			}
+			if(removeOperator.get(j).equals("+")) {
+				removeOperator.remove(j);
+			}
+		}
+		
+		for(int k = 0; k < removeOperator.size(); k++) {
+			String[] power = removeOperator.get(k).split("\\^");
+			if(removeOperator.get(k).contains("^") == true) {
+				map.put(power[0], Integer.parseInt(power[1]));
+			}else {
+				map.put(power[0], 1);
+			}
+		}
+		
+		if(operator == "+") {
+			
+		}
+		if(operator == "-") {
+			
+		}
+		if(operator == "*") {
+			
+		}
+		
+	}
+	
+	static void plus(String operator, String A, String B) {
+
+		
+	}
+	void minus(String operator, String A, String B) {
+		
+	}
+	void multiply(String operator, String A, String B) {
+		
+	}
+
+}

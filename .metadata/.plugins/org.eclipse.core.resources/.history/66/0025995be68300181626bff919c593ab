@@ -1,0 +1,40 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class _14 {
+
+	static Scanner input = new Scanner(System.in);
+	int num[];
+	int color[];
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] type = input.nextLine().split(" ");
+	}
+
+	void judge(int data[], int r) {
+		int pair,three,four,straight;
+		for(int i = 0; i < 5; i++) {
+			data[i] = Integer.parseInt(type[i]);
+			num[i] = data[i] / 10;
+			color[i] = data[i] % 10;
+		}
+		
+		HashMap<Integer, Integer> repetitions = new HashMap<Integer, Integer>();
+		int count = 0;
+		for(int j = 0; j < color.length; j++) {
+			for(int k = 1; k < color.length-1; k++) {
+				if(color[j]==color[k]) {
+					count++;
+				}
+			}
+		}
+		
+		 
+		 System.out.println(count);
+		
+	}
+	
+}

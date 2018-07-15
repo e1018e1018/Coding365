@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class _15 {
+
+	static Scanner input = new Scanner(System.in);
+	static String operator = input.next();
+	static String A = input.nextLine();
+	static String B = input.nextLine();
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String[] temp_1 = A.split(" ");
+		for(int i=0; i<temp_1.length; i++) {
+			if(temp_1[i] == "-") {
+				temp_1[i] = temp_1[i].concat(temp_1[i+1]);
+				temp_1[i+1] = null;
+			}
+			if(temp_1[i] == "+") {
+				temp_1[i] = null;
+			}
+		}
+		System.out.println(temp_1.toString());
+		
+		if(operator == "+") {
+			
+		}
+		if(operator == "-") {
+			
+		}
+		if(operator == "*") {
+			
+		}
+		
+	}
+	
+	static void plus(String operator, String A, String B) {
+		String[] temp_1 = operator.split(" ");
+		for(int i=0; i<temp_1.length; i++) {
+			if(temp_1[i] == "-") {
+				temp_1[i] = temp_1[i].concat(temp_1[i+1]);
+				temp_1[i+1] = null;
+			}
+			if(temp_1[i] == "+") {
+				temp_1[i] = null;
+			}
+		}
+		
+	}
+	void minus(String operator, String A, String B) {
+		
+	}
+	void multiply(String operator, String A, String B) {
+		
+	}
+
+}

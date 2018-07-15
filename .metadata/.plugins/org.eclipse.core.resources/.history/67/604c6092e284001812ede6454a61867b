@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class _15 {
+
+	static Scanner input = new Scanner(System.in);
+	static String operator = input.next();
+	static String A = input.nextLine();
+	static String B = input.nextLine();
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		if(operator == "+") {
+			
+		}
+		if(operator == "-") {
+			
+		}
+		if(operator == "*") {
+			
+		}
+		
+	}
+	
+	static void plus(String operator, String A, String B) {
+		String[] temp_1 = operator.split(" ");
+	}
+	void minus(String operator, String A, String B) {
+		
+	}
+	void multiply(String operator, String A, String B) {
+		
+	}
+
+}

@@ -1,0 +1,39 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class _14 {
+		
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		String[] type = input.nextLine().split(" ");
+
+		int pair,three,four,straight;
+		int count = 0;
+		int num[] = new int[5];
+		int color[] = new int[5];
+		int data[] = new int[5];
+
+		for(int i = 0; i < 5; i++) {
+			data[i] = Integer.parseInt(type[i]);
+			num[i] = data[i] / 10;
+			color[i] = data[i] % 10;
+		}
+		
+		HashMap<Integer, Integer> repetitions = new HashMap<Integer, Integer>();
+
+		for(int j = 0; j < color.length-1; j++) {
+			for(int k = 1; k < color.length; k++) {
+				if(num[j] == num[k]) {
+					count++;
+				}
+			}
+		}
+		System.out.println(count);
+	}
+
+
+	
+}

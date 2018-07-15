@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class _05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input=new Scanner(System.in);
+		int a, b, c, d, e;
+
+			String[] INPUT=input.nextLine().split(" ");
+			a=Integer.parseInt(INPUT[0]);
+			b=Integer.parseInt(INPUT[1]);
+			c=Integer.parseInt(INPUT[2]);
+			d=Integer.parseInt(INPUT[3]);
+			e=Integer.parseInt(INPUT[4]);
+
+			float avg=(float) (Math.floor((a+b+c+d+e)/5.0*100)/100);
+			float variance=(float) ((Math.pow(a-avg, 2) + Math.pow(b-avg, 2) + Math.pow(c-avg, 2) + Math.pow(d-avg, 2) + Math.pow(e-avg, 2))/5);
+
+			System.out.printf("%.2f\n",avg);
+			System.out.printf("%.2f\n",Math.abs(variance));
+			System.out.printf("%.2f",Math.abs(Math.sqrt(variance)));
+			
+			
+		}
+	
+
+}

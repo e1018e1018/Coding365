@@ -1,0 +1,81 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class _13 {
+
+	static ArrayList<String> A = new ArrayList<String>();
+	static ArrayList<String> B = new ArrayList<String>();
+	
+	static List<String> list1 =new ArrayList<String>(A);
+	static List<String> list2 =new ArrayList<String>(B);
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		while(input.hasNext()){
+		String[] temp = input.nextLine().toString().split(" ");
+
+		if(temp[0].equals("0")) {
+			System.exit(1);
+		}
+		
+		if(temp[0].equals("1")) {
+			A.clear();;
+			print();
+		}
+		
+		if(temp[0].equals("2")) {
+			B.clear();
+			print();
+		}
+		
+		if(temp[0].equals("3")) {
+			A.add(temp[1]);
+			print();
+		}
+		
+		if(temp[0].equals("4")) {
+			B.add(temp[1]);
+			print();
+		}
+		
+		if(temp[0].equals("5")) {
+			if(A.contains(temp[1])) {
+				A.remove(temp[1]);
+			}
+			print();
+		}
+		
+		if(temp[0].equals("6")) {
+			if(B.contains(temp[1])) {
+				B.remove(temp[1]);
+			}
+			print();
+		}
+		
+		if(temp[0].equals("7")) {
+			List<String> list1 =new ArrayList<String>(A);
+			List<String> list2 =new ArrayList<String>(B);
+			list1.addAll(list2);
+			System.out.println(list1);
+		}
+		
+		if(temp[0].equals("8")) {
+			list1.retainAll(list2);
+			System.out.println(list2);
+		}
+		
+		if(temp[0].equals("9")) {
+			if(list1.retainAll(list2) == false) {
+				System.out.println("0");
+			}else {
+				System.out.println("1");
+			}			
+		}
+	}
+}		
+	public static void print() {
+		System.out.println("A:" + A.get(0) + "B:" + B);
+	}
+}

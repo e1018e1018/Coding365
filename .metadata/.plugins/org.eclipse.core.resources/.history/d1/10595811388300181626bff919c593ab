@@ -1,0 +1,19 @@
+
+import java.util.Scanner;
+
+public class TEST {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		int code[] = new int[3];
+		int hr[] = new int[3];
+		int time_1[] = new int[3];
+		int time_2[] = new int[3];
+		
+		if(int i = 0; i < 3; i++) {
+			
+		}
+	}
+
+}
