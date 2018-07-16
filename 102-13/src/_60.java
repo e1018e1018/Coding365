@@ -89,7 +89,6 @@ public class _60 {
 		}
 		int numerator = a1 * b1;
 		int denominator = a2 * b2;
-		int temp;
 
 		for(int i = 2; i < denominator; i++) {
 			while(numerator % i == 0 && denominator % i == 0) {
