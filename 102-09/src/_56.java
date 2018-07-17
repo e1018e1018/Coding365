@@ -25,7 +25,7 @@ public class _56 {
 			System.out.println("Error");
 			System.exit(1);
 		}
-		if(N < -100 || N >= 0 || C <=0 || C > 30000 || W <=0 || W > 10000) {
+		if(N <= -100 || N >= 0 || C <=0 || C >= 30000 || W <=0 || W >= 10000) {
 			System.out.println("Error");
 			System.exit(1);
 		}
