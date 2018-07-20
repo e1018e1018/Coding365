@@ -11,8 +11,8 @@ public class _33 {
 		int N = Integer.parseInt(type[0]);
 		int M = Integer.parseInt(type[1]);
 		int K = Integer.parseInt(type[2]);
-		ArrayList<Integer> New = new ArrayList<Integer>();		
-		ArrayList<Integer> Num = new ArrayList<Integer>();		
+		ArrayList<Integer> New = new ArrayList<Integer>();		//新陣列
+		ArrayList<Integer> Num = new ArrayList<Integer>();		//舊陣列
 
 		for(int i = 1; i <= N; i++) {							//依序加入N個人，指派到相對應陣列位置
 			Num.add(i);
