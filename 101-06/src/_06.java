@@ -20,7 +20,7 @@ public class _06 {
 			
 		
 			if((b*b-4*a*c)>=0) {
-				System.out.printf("%.1f\n", x1);
+				System.out.printf("%.1f\n", Math.floor(((x1)*100)/100));
 				System.out.printf("%.1f\n", x2);
 			}
 			else{

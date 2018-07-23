@@ -7,6 +7,9 @@ public class _16 {
 		Scanner input = new Scanner(System.in);		
 		String _1 = input.next();
 		String _2 = input.next();
+		if(_1.length() > 59 || _2.length() > 59) {
+			System.exit(1);
+		}
 		ArrayList<Integer> plus = new ArrayList<Integer>();
 		ArrayList<Integer> minus = new ArrayList<Integer>();
 		int[] multiply = new int[_1.length() + _2.length() + Math.abs(_1.length() - _2.length())];
