@@ -49,7 +49,12 @@ public class _15 {
 			}else 
 			if(_2Split[i].contains("^") == false) {
 				if(_2Split[i].contains("x")) {
-					Coeff[0] = Coeff[0].replace("x", "");
+					if(_2Split[i].substring(0, 1).equals("x")) {
+						Coeff[0] = Coeff[0].replace("x", "1");
+					}else {
+						Coeff[0] = Coeff[0].replace("x", "");
+					}
+
 					Coeff_2.add("1:" + Coeff[0].replace(" ", ""));
 				}else {
 					Coeff_2.add("0:" + Coeff[0].replace(" ", ""));
@@ -121,8 +126,16 @@ public class _15 {
 		if(sign.equals("-")) {
 			ArrayList<String> Coeff_minus1 = new ArrayList<String>(Coeff_1);
 			ArrayList<String> Coeff_minus2 = new ArrayList<String>(Coeff_2);
+			
+			for(int k = 0; k < Coeff_minus2.size(); k++) {
+				if(Coeff_minus2.get(k).contains("-")) {
+					Coeff_minus2.set(k, Coeff_minus2.get(k).replace("-", ""));
+				}else {
+					Coeff_minus2.set(k, Coeff_minus2.get(k).replace(":", ":-"));
+				}
+			}
 			for(int i = 0; i < Coeff_minus1.size(); i++) {
-				for(int j = 0; j < Coeff_minus2.size(); j++) {
+				for(int j = 0; j < Coeff_minus2.size(); j++) {					
 					String[] a = Coeff_minus1.get(i).split(":");
 					String[] b = Coeff_minus2.get(j).split(":");
 					if(a[1].equals("-")) {
@@ -132,7 +145,7 @@ public class _15 {
 						b[1] = "-1";
 					}
 					if(a[0].equals(b[0])) {
-						b[1] = String.format("%d", Integer.parseInt(a[1]) - Integer.parseInt(b[1]));
+						b[1] = String.format("%d", Integer.parseInt(a[1]) + Integer.parseInt(b[1]));
 						Coeff_minus1.remove(i);
 						if(Integer.parseInt(b[1]) == 0) {
 							Coeff_minus1.remove(j);

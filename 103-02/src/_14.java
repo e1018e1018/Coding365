@@ -25,8 +25,6 @@ public class _14 {
 			num[i] = data[i] / 10;
 			color[i] = data[i] % 10;
 		}
-		
-		HashMap<Integer, Integer> repetitions = new HashMap<Integer, Integer>();
 
 		for(int j = 0; j < color.length-1; j++) {
 			for(int k = j+1; k < color.length; k++) {
