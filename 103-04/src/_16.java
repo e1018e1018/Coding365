@@ -41,7 +41,7 @@ public class _16 {
 				add_2 += Integer.parseInt(_02Split[b]);
 			}
 		}else {
-			for(int b = 1; b < _02Split.length; b++) { 
+			for(int b = 0; b < _02Split.length; b++) { 
 				add_2 += Integer.parseInt(_02Split[b]);
 			}
 		}
@@ -115,16 +115,21 @@ public class _16 {
 				digit = 0;
 			}
 		}
-		if(negative) {
-			System.out.print("-");
-			for(int k = minus.size() -1 ; k >= 0; k--) {
-				System.out.print(minus.get(k));
-			}
+		if(_1.equals(_2)) {
+			System.out.print(0);
 		}else {
-			for(int k = minus.size() -1 ; k >= 0; k--) {
-				System.out.print(minus.get(k));
+			if(negative) {
+				System.out.print("-");
+				for(int k = minus.size() -1 ; k >= 0; k--) {
+					System.out.print(minus.get(k));
+				}
+			}else {
+				for(int k = minus.size() -1 ; k >= 0; k--) {
+					System.out.print(minus.get(k));
+				}
 			}
 		}
+		
 		System.out.print("\n");
 		
         for(int i =0 ; i < _1.length(); i++){
@@ -141,10 +146,14 @@ public class _16 {
         	System.out.print(0);
         }
         else {
-            if(multiply[zeroCount - 1] != 0) {
-            	System.out.print(multiply[zeroCount - 1]);
+        	int m;
+            for(m = 0; m < multiply.length -1; m++) {
+            	if(multiply[m] != 0) {
+            	break;
             }
-            for(int k = 0 + zeroCount; k < multiply.length - 1; k++) {
+            }
+            for(int k = m; k < multiply.length -1 ; k++) {
+            
             	System.out.print(multiply[k]);
             }
         }
