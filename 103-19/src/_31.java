@@ -74,7 +74,6 @@ public class _31 {
 		Collections.sort(list);
 
 		for(int i = 0; i < list.size(); i++) {
-			String[] split_0 = list.get(i).split(" ");
 			if(Integer.parseInt(list.get(list.size() - 1).substring(0, 1)) > Integer.parseInt(list.get(i).substring(0, 1))) {
 				String temp = list.get(list.size() - 1);
 				for(int j = list.size() - 1; j > 0 ; j--) {
