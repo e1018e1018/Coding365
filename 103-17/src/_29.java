@@ -7,8 +7,14 @@ public class _29 {
 		Scanner input = new Scanner(System.in);
 		
 		String line_1 = input.nextLine();
+		while(line_1.contains(".") == false) {
+			line_1 += input.nextLine();
+		}
 		//input.nextLine();
 		String line_2 = input.nextLine();
+		while(line_2.contains(".") == false) {
+			line_2 += input.nextLine();
+		}
 		
 		String[] split = line_1.split(" ");
 		int first = 0;
