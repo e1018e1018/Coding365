@@ -10,60 +10,99 @@ public class _28 {
 			String player2 = input.nextLine();
 			String com = input.nextLine();
 			int check = input.nextInt();
-			
-			String[] split1 = new String[3];
-			String[] split2 = new String[3];
-			String[] splitCom = com.split(" ");
-			
-			split1[0] = player1.substring(0, 5);
-			split1[1] = player1.substring(6, 11);
-			split1[2] = player1.substring(12, 17);
-			split2[0] = player2.substring(0, 5);
-			split2[1] = player2.substring(6, 11);
-			split2[2] = player2.substring(12, 17);
-			
-			int count1 = 0;
-			int count2 = 0;
-			for(int i = 0; i < 3; i++) {
-				int countA = 0;
-				for(int j = 0; j < splitCom.length; j++) {
-					if(split1[i].contains(splitCom[j])) {
-						countA++;
-					}
-					if(countA == 3) {
-						count1++;
-					}
-				}
+			int[][] one = new int[3][3];
+			int[][] two = new int[3][3];
+			String[] split1 = player1.split(" ");
+			String[] split2 = player2.split(" ");
+			String[] split3 = com.split(" ");
+			int total = 0;
+			int countA = 0;
+			int countB = 0;
+			for(int i = 0; i < split3.length; i++) {
+				total += Integer.parseInt(split3[i]);
 			}
+			
 			for(int i = 0; i < 3; i++) {
-				int countB = 0;
-				for(int j = 0; j < splitCom.length; j++) {
-					if(split2[i].contains(splitCom[j])) {
-						countB++;
-					}
-					if(countB == 3) {
-						count2++;
-					}
+				int count = 0;
+				for(int j = 0; j < 3; j++) {
+					one[i][j] = Integer.parseInt(split1[3*i+j]);
+					count += one[i][j];
+				}
+				if(count == total) {
+					countA++;
+				}
+			}			
+			for(int i = 0; i < 3; i++) {
+				int count = 0;
+				for(int j = 0; j < 3; j++) {
+					two[i][j] = Integer.parseInt(split2[3*i+j]);
+					count += two[i][j];
+				}
+				if(count == total) {
+					countB++;
 				}
 			}
 			
-			if(count1 > count2) {
-				System.out.println("Player1 wins");
-			}else if(count1 < count2) {
-				System.out.println("Player2 wins");
-			}else {
+			for(int i = 0; i < 3; i++) {
+				int count = 0;
+				for(int j = 0; j < 3; j++) {
+					one[j][i] = Integer.parseInt(split1[3*i+j]);
+					count += one[j][i];
+				}
+				if(count == total) {
+					countA++;
+				}
+			}			
+			for(int i = 0; i < 3; i++) {
+				int count = 0;
+				for(int j = 0; j < 3; j++) {
+					two[j][i] = Integer.parseInt(split2[3*i+j]);
+					count += two[j][i];
+				}
+				if(count == total) {
+					countB++;
+				}
+			}
+			
+			for(int i = 0; i < 3; i++) {
+				int count = 0;
+				for(int j = 0; j < 3; j++) {
+					one[i][j] = Integer.parseInt(split1[3*i+j]);
+					if(j == 2) {
+						count += one[i][i];
+					}
+				}
+				if(count == total) {
+					countA++;
+				}
+			}			
+			for(int i = 0; i < 3; i++) {
+				int count = 0;
+				for(int j = 0; j < 3; j++) {
+					two[i][j] = Integer.parseInt(split2[3*i+j]);
+					if(j == 2) {
+						count += two[i][i];
+					}
+				}
+				if(count == total) {
+					countB++;
+				}
+			}
+			
+			if(countA == countB) {
 				System.out.println("Draw");
 			}
-			
-			if(check == 0) {
-				input.nextLine();
-				continue;
-			}else {
+			if(countA > countB) {
+				System.out.println("Player1 wins");
+			}
+			if(countA < countB) {
+				System.out.println("Player2 wins");
+			}
+			input.nextLine();
+			if(check == -1) {
 				break;
 			}
 		}
-		
 
 	}
-
 }
