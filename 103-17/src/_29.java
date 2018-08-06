@@ -48,18 +48,7 @@ public class _29 {
 		}
 		
 		List<String> sort = new ArrayList<>();
-		for(int i = 65; i <=90; i++) {
-			int count = 0;
-			String aChar = new Character((char)i).toString();
-			for(int j = 0; j < line_2.length(); j++) {
-				if(aChar.equals(line_2.substring(j, j+1))) {
-					count++;
-				}
-			}
-			if(count < 10) {
-				sort.add(count + " " + aChar);
-			}
-		}
+		line_2 = line_2.toLowerCase();
 		for(int i = 97; i <=122; i++) {
 			int count = 0;
 			String aChar = new Character((char)i).toString();
