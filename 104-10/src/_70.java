@@ -41,3 +41,4 @@ class Class{
 		return 0;
 	}
 }
+
